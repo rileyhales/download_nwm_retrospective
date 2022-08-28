@@ -10,7 +10,7 @@ echo "Year chosen is $1"
 # download hourly
 echo "Downloading hourly data"
 mkdir "$1"
-aws s3 cp s3://noaa-nwm-retrospective-2-1-pds/model_output/$1 ./$1 --no-sign-request --recursive --exclude "*" --include "19800101*CHRTOUT_DOMAIN1.comp"
+aws s3 cp s3://noaa-nwm-retrospective-2-1-pds/model_output/$1 ./$1 --no-sign-request --recursive --exclude "*" --include "*CHRTOUT_DOMAIN1.comp"
 
 # copy only streamflow variable to new files
 echo "Dropping variables"
