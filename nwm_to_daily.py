@@ -25,3 +25,4 @@ if __name__ == "__main__":
         wildcard_path = os.path.join(".", f"{year}_slim", f"{date.strftime('%Y%m%d')}*")
         print(wildcard_path)
         subprocess.call(f'nces {wildcard_path} -o {year}_slim_daily/{date.strftime("%Y%m%d")}.nc --op_typ mean', shell=True)
+        subprocess.call(f'rm {wildcard_path}', shell=True)
