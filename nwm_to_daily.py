@@ -21,5 +21,5 @@ if __name__ == "__main__":
     )
     for date in daterange:
         wildcard_path = os.path.join(".", f"{year}", f"{date.strftime('%Y%m%d')}*")
-        subprocess.call(f'nces {wildcard_path} -o {year}_slim_daily/{date.strftime("%Y%m%d")}.nc --op_typ mean', shell=True)
+        subprocess.call(f'nces {wildcard_path} -o {year}_daily/{date.strftime("%Y%m%d")}.nc --op_typ mean', shell=True)
         subprocess.call(f'rm {wildcard_path}', shell=True)
